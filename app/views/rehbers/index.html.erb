@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rehbers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Isim</th>
+      <th>Sehir</th>
+      <th>Ozet</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rehbers.each do |rehber| %>
+      <tr>
+        <td><%= rehber.isim %></td>
+        <td><%= rehber.sehir %></td>
+        <td><%= rehber.ozet %></td>
+        <td><%= image_tag rehber.resim.url(:thumb) if rehber.resim? %> </td>
+        <td><%= link_to 'Show', rehber %></td>
+        <td><%= link_to 'Edit', edit_rehber_path(rehber) %></td>
+        <td><%= link_to 'Destroy', rehber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rehber', new_rehber_path %>

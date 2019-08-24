@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Isim:</strong>
+  <%= @rehber.isim %>
+</p>
+
+<p>
+  <strong>Sehir:</strong>
+  <%= @rehber.sehir %>
+</p>
+
+<p>
+  <strong>Ozet:</strong>
+  <%= @rehber.ozet %>
+</p>
+
+
+<p>
+    
+    <%= image_tag @rehber.resim.url(:medium) if @rehber.resim? %>
+</p>
+<%= link_to 'Edit', edit_rehber_path(@rehber) %> |
+<%= link_to 'Back', rehbers_path %>
